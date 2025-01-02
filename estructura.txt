@@ -1,0 +1,21 @@
+pelis-netflix-manager/
+ |__ data/
+ |__|___netflix_titles.csv
+ |
+├── src/            # Carpeta principal del código fuente
+│   ├── __init__.py        # Indica que es un paquete Python
+│   ├── main.py            # Archivo principal con la lógica solicitada
+│
+├── requirements.txt       # Dependencias del proyecto
+├── README.md              # Documentación básica del proyecto
+├── .gitignore             # Archivos/carpetas a ignorar por Git
+
+
+Crear una aplicación en consola en PYTHON que permite realizar las siguientes operaciones 
+(considerando que se mostrará un menú inicial):
+1. cargar peliculas. Se deberá permitir al usuario introducir la ruta del archivo
+y luego cargar todos los registros a una lista de diccionarios. 
+2. buscar por titulo (title):  Una vez cargada la lista en memoria (una lista) se utilizará esta opción para buscar 
+una película por coincidencias en el título 
+3. buscar por actor (cast):  Una vez cargada la lista en memoria (una lista) se utilizará esta opción para buscar una película
+ por coincidencias en el nombre del autor
