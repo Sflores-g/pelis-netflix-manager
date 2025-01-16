@@ -19,3 +19,6 @@ y luego cargar todos los registros a una lista de diccionarios.
 una película por coincidencias en el título 
 3. buscar por actor (cast):  Una vez cargada la lista en memoria (una lista) se utilizará esta opción para buscar una película
  por coincidencias en el nombre del autor
+
+
+
