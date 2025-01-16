@@ -10,23 +10,24 @@ def subir_peliculas():
     try:
         with open(ruta_archivo, mode= "r", encoding="utf-8") as archivo:
             lector=csv.DictReader(archivo)
-            peliculas = [fila for fila in lector]
-        print ("Peliculas cargada correctamente. ")
+            peliculas = [row for row in lector]
+        print (f"Peliculas cargada correctamente. {len(peliculas)} ")
     except FileNotFoundError:
         print("El aarchivo no fue encontrado")
     except Exception  as e:
         print(f"Error al cargar el archivo:  {e}")
 
 def buscar_por_titulo():
+    
     if not peliculas:
         print("No hay peliculas cargadas. ")
         return
     
-    titulo= input("Introduce el titulo de la pelicula a buscar: ").lower()
+    titulo= input("Introduce el titulo de la pelicula a buscar: ")
     resultados = [pelicula for pelicula in peliculas if titulo in pelicula['title'].lower()]
     if resultados:
-        for pelicula in resultados:
-            print(f"Título: {pelicula['title']}, Año: {pelicula['year']}, Actores: {pelicula['cast']}")
+        for pelicula in resultados[:20]:
+            print(f"ID: {pelicula['show_id']},Tipo: {pelicula['type']}, Título: {pelicula['title']}")
     else:
         print("No se encontraron películas con ese título.")
 
@@ -35,12 +36,12 @@ def buscar_por_actor():
         print("No hay películas cargadas.")
         return
     
-    actor = input("Introduce el nombre del actor a buscar: ").lower()
+    actor = input("Introduce el nombre del actor a buscar: ")
     resultados = [pelicula for pelicula in peliculas if actor in pelicula['cast'].lower()]
     
     if resultados:
-        for pelicula in resultados:
-            print(f"Título: {pelicula['title']}, Año: {pelicula['year']}, Actores: {pelicula['cast']}")
+        for pelicula in resultados[:20]:
+            print(f"Título: {pelicula['title']}, Actores: {pelicula['cast']}")
     else:
         print("No se encontraron películas con ese actor.")
 
